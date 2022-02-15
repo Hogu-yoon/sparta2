@@ -37,4 +37,4 @@ urlpatterns = [
 ]
 
 
-print("Life is Tooooooooooooooooooooooooooooooo Short")
+print("Life is Toooooooooooooooooooooooooooo Short")
