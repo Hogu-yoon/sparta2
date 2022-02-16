@@ -1,3 +1,4 @@
 .idea/
 __pycache__
 
+sparta/local_settings.py

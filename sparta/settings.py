@@ -8,8 +8,13 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
-"""
 
+"""
+import pymysql
+
+# Database
+# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+pymysql.install_as_MySQLdb()
 
 from pathlib import Path
 from typing import List
@@ -39,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "tabom.apps.TabomConfig",
 ]
 
 MIDDLEWARE = [
@@ -75,12 +81,36 @@ WSGI_APPLICATION = "sparta.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "sparta",
+#         "USER": "root",
+#         "PASSWORD": "1234",
+#         "HOST": "localhost",
+#         "PORT": "3306",
+#     }
+# }
+#
+
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.oracle",
+#         "NAME": "XE",
+#         "USER": "kys",
+#         "PASSWORD": "1234",
+#         "HOST": "localhost",
+#         "PORT": "1521",
+#     }
+# }
 
 
 # Password validation
@@ -109,9 +139,12 @@ LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
 
+
 USE_I18N = True
 
-USE_TZ = True
+USE_L10N = True
+
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -122,3 +155,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+try:
+    from sparta.local_settings import *
+
+except ImportError:
+    pass
