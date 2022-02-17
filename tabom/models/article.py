@@ -1,9 +1,7 @@
 from django.db import models
 
+from tabom.models.base_model import BaseModel
 
-class Article(models.Model):
+
+class Article(BaseModel):
     title = models.CharField(max_length=255)
-    # 수정일자 설정 auto_now
-    updated_at = models.DateTimeField(auto_now=True)
-    # 생성일자 설정 auto_now_add
-    created_at = models.DateTimeField(auto_now_add=True)

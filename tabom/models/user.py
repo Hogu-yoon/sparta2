@@ -1,9 +1,7 @@
 from django.db import models
 
+from tabom.models.base_model import BaseModel
 
-class User(models.Model):
+
+class User(BaseModel):
     name = models.CharField(max_length=50)
-    # 수정일자 사용
-    updated_at = models.DateTimeField(auto_now=True)
-    # 생성일자 사용
-    created_at = models.DateTimeField(auto_now_add=True)

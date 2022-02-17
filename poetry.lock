@@ -125,6 +125,14 @@ django = "*"
 typing-extensions = "*"
 
 [[package]]
+name = "dlib"
+version = "19.23.0"
+description = "A toolkit for making real world machine learning and data analysis applications"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "isort"
 version = "5.10.1"
 description = "A Python utility / library to sort Python imports."
@@ -277,7 +285,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "b42c02c1e93fcddc3d2f580bc7e2cff9a4fda3074631e55593847311dbf7755d"
+content-hash = "214bb4bf5cacdd58714ae98855929179cc491276ab89f3f41501a4bac32714fc"
 
 [metadata.files]
 asgiref = [
@@ -329,6 +337,9 @@ django-stubs = [
 django-stubs-ext = [
     {file = "django-stubs-ext-0.3.1.tar.gz", hash = "sha256:783c198d7e39a41be0b90fd843fa2770243a642922af679be4b19e03b82c8c28"},
     {file = "django_stubs_ext-0.3.1-py3-none-any.whl", hash = "sha256:a51a3e9e844d4e1cacaaedbb33bf3def78a3956eed5d9575a640bd97ccd99cec"},
+]
+dlib = [
+    {file = "dlib-19.23.0.tar.gz", hash = "sha256:d026f70185d243b4e7cc20c5eece71e744edadb6cc7a7783dd98cb97c5a11f20"},
 ]
 isort = [
     {file = "isort-5.10.1-py3-none-any.whl", hash = "sha256:6f62d78e2f89b4500b080fe3a81690850cd254227f27f75c3a0c491a1f351ba7"},
