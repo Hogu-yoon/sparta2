@@ -30,8 +30,8 @@ class TestLikeService(TestCase):
         # 첫번째 좋아요는 가능
         like1 = do_like(user.id, article.id)
 
-        with self.assertRaises(Exception):
-            pass
+        # with self.assertRaises(Exception):
+        #     pass
             # raise Exception()
 
         # 두번째 에러는 실패
