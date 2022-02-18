@@ -3,6 +3,7 @@
 # DEBUG = False
 
 DATABASES = {
+
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "sparta",
@@ -11,9 +12,8 @@ DATABASES = {
         "HOST": "localhost",
         "PORT": "3306",
     }
+
 }
-
-
 
 # DATABASES = {
 #     "default": {

@@ -20,7 +20,7 @@ class TestLikeService(TestCase):
         self.assertEqual(user.id, like.user_id)
         self.assertEqual(article.id, like.article_id)
 
-    def test_a_user_can_like_an_article_only_once(self)->None:
+    def test_a_user_can_like_an_article_only_once(self) -> None:
         # 오직 한번만 누를 수 있는 함수
         # Given
         user = User.objects.create(name="test")
@@ -36,9 +36,6 @@ class TestLikeService(TestCase):
 
         # 두번째 에러는 실패
         like2 = do_like(user.id, article.id)
-
-
-
 
         # When
         like = do_like(user.id, article.id)
@@ -63,5 +60,18 @@ class TestLikeService(TestCase):
         invalid_article_id = 9988
 
         # Expect
+        # ??? 무슨 패키지를 받은지 모르겠음
         with self.assertRaises(IntegrityError):
             do_like(user.id, invalid_article_id)
+
+    def test_like_count_should_increase(self) -> None:
+        # Given
+        user = User.objects.create(name="test")
+        article = Article.objects.create(title="test_title")
+
+        # When
+        do_like(user.id, article.id)
+
+        # Then
+        article = Article.objects.get(id=article.id)
+        self.assertEqual(1, article.like_set.count())

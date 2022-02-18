@@ -1,4 +1,3 @@
-
 """
 
 Django settings for sparta project.
@@ -92,6 +91,7 @@ WSGI_APPLICATION = "sparta.wsgi.application"
 #     }
 # }
 
+
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.mysql",
@@ -102,7 +102,6 @@ WSGI_APPLICATION = "sparta.wsgi.application"
 #         "PORT": "3306",
 #     }
 # }
-#
 
 
 # DATABASES = {
