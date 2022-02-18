@@ -92,16 +92,16 @@ WSGI_APPLICATION = "sparta.wsgi.application"
 # }
 
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": "sparta",
-#         "USER": "root",
-#         "PASSWORD": "1234",
-#         "HOST": "localhost",
-#         "PORT": "3306",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "sparta",
+        "USER": "root",
+        "PASSWORD": "root",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
+}
 
 
 # DATABASES = {
