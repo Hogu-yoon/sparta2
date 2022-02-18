@@ -45,24 +45,24 @@ class TestLikeService(TestCase):
         self.assertEqual(user.id, like.user_id)
         self.assertEqual(article.id, like.article_id)
 
-    def test_it_should_raise_exception_when_like_an_user_does_not_exist(self) -> None:
-        # Given
-        invalid_user_id = 9988
-        article = Article.objects.create(title="test_title")
-
-        # Expect
-        with self.assertRaises(IntegrityError):
-            do_like(invalid_user_id, article.id)
-
-    def test_it_should_raise_exception_when_like_an_article_does_not_exist(self) -> None:
-        # Given
-        user = User.objects.create(name="test")
-        invalid_article_id = 9988
-
-        # Expect
-        # ??? 무슨 패키지를 받은지 모르겠음
-        with self.assertRaises(IntegrityError):
-            do_like(user.id, invalid_article_id)
+    # def test_it_should_raise_exception_when_like_an_user_does_not_exist(self) -> None:
+    #     # Given
+    #     invalid_user_id = 9988
+    #     article = Article.objects.create(title="test_title")
+    #
+    #     # Expect
+    #     with self.assertRaises(IntegrityError):
+    #         do_like(invalid_user_id, article.id)
+    #
+    # def test_it_should_raise_exception_when_like_an_article_does_not_exist(self) -> None:
+    #     # Given
+    #     user = User.objects.create(name="test")
+    #     invalid_article_id = 9988
+    #
+    #     # Expect
+    #     # ??? 무슨 패키지를 받은지 모르겠음
+    #     with self.assertRaises(IntegrityError):
+    #         do_like(user.id, invalid_article_id)
 
     def test_like_count_should_increase(self) -> None:
         # Given
